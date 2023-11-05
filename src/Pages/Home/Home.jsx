@@ -52,7 +52,7 @@ const Home = () => {
 
           <div>
             <h1>Video Player</h1>
-            <video controls width="600" height="400" poster="/bg-newLetter.jpg">
+            <video controls width="600" height="400" poster="/bg-newLetter.jpg" loading='lazy'>
               <source src="/vidd.mp4" type="video/mp4" />
             </video>
           </div>
