@@ -1,7 +1,7 @@
 
 import { Rating } from "@material-tailwind/react";
 import React from "react";
-import { FaStar } from 'react-icons/fa';
+
 
 
 const Testo = ({ data }) => {
@@ -17,9 +17,7 @@ const Testo = ({ data }) => {
               </div>
               <div>
                 <div className="font-bold text-stone-500 mx-4">{name}</div>
-                <div className="text-sm font-medium text-stone-500 hover:text-stone-500 mx-4">
-                  <a href="#">CEO, Tailblocks</a>
-                </div>
+                
                 <Rating value={rating} readonly></Rating>
               </div>
             </div>

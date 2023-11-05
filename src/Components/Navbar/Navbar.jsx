@@ -6,10 +6,10 @@ const Navbar = () => {
   const {user , OUT} = useContext(AuthContext)
     const link = <>
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/'}>Home</NavLink>
-  <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white  rounded-md mr-2 '} to={'/about'}>About</NavLink>
+  <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white  rounded-md mr-2 '} to={'/rooms'}>Rooms</NavLink>
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/contact'}>Contact</NavLink>
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/login'}>Login</NavLink>
-
+   
    
    
   </> 

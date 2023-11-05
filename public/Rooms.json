@@ -1,0 +1,152 @@
+[
+  {
+    "roomId": 1,
+    "img": "https://i.ibb.co/MC9NMg4/sasha-kaunas-7-ZD-JIwl410-unsplash.jpg",
+    "description": "Elegant Double Room with a city view and modern amenities.",
+    "roomSize": "300 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/Wyz0sJ0/sasha-kaunas-kg06gup-FNZc-unsplash.jpg",
+      "https://i.ibb.co/YbtK1Cb/erick-palacio-B9-J6ab-AHPA-unsplash.jpg"
+    ],
+    "seats": 3,
+    "availability": true,
+    "priceRange": 1400
+  },
+  {
+    "roomId": 2,
+    "img": "https://i.ibb.co/rmrRdnn/kenny-eliason-i-Aftd-Icgp-Fc-unsplash.jpg",
+    "description": "Luxurious Suite with a private balcony and scenic ocean views.",
+    "roomSize": "450 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/gzy0Q1V/huy-nguyen-f-Qg-YAn-WVFeo-unsplash.jpg",
+      "https://i.ibb.co/sR16vS7/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg"
+    ],
+    "availability": true,
+    "seats": 3,
+    "priceRange": 1800
+  },
+  {
+    "roomId": 3,
+    "img": "https://i.ibb.co/FBLMDtT/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg",
+    "description": "Cozy Single Room with a comfortable workspace for business travelers.",
+    "roomSize": "200 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/KLy98XY/dave-photoz-6-MYm-c-UJRB0-unsplash.jpg",
+      "https://i.ibb.co/TYbcC0t/sidekix-media-g8tb9-SXq-ZVQ-unsplash.jpg"
+    ],
+    "availability": true,
+    "seats": 3,
+    "priceRange": 1200
+  },
+  {
+    "roomId": 4,
+    "img": "https://i.ibb.co/hC7P7G5/roberto-nickson-emqn-SQw-QQDo-unsplash.jpg",
+    "description": "Spacious Family Room with bunk beds and a play area for kids.",
+    "roomSize": "500 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/8ssbBrc/isaac-quesada-xc4oxg-Ab-Dmw-unsplash.jpg",
+      "https://i.ibb.co/mNHX1sM/sidekix-media-Eo-TUCbv9-Jrs-unsplash.jpg"
+    ],
+    "availability": true,
+    "seats": 3,
+    "priceRange": 1500
+  },
+  {
+    "roomId": 5,
+    "img": "https://i.ibb.co/7YfzjFw/point3d-commercial-imaging-ltd-k-CSlhh-C-Ch8-unsplash.jpg",
+    "description": "Romantic Honeymoon Suite with a Jacuzzi and rose petal decor.",
+    "roomSize": "400 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/SdJKjdj/albert-vincent-wu-fupf3-x-AUqw-unsplash.jpg",
+      "https://i.ibb.co/4P2gKhz/frames-for-your-heart-Fqqi-Av-Jejto-unsplash.jpg"
+    ],
+    "availability": true,
+    "seats": 3,
+    "priceRange": 1600
+  },
+  {
+    "roomId": 6,
+    "img": "https://i.ibb.co/23RVyv5/point3d-commercial-imaging-ltd-DLz-YCk-Mkj-BQ-unsplash.jpg",
+    "description": "Mountain View Deluxe Room with a balcony and nature-inspired decor.",
+    "roomSize": "350 sq. ft.",
+    "roomImages": [
+      "https://i.ibb.co/KzvP0c6/marvin-meyer-f-Bdlytm6-Hp8-unsplash.jpg",
+      "https://i.ibb.co/jyhbFTL/shai-pal-56-WKMCORs-0-unsplash.jpg"
+    ],
+    "availability": true,
+    "seats": 3,
+    "priceRange": 1300
+  },
+  {
+    "roomId": 7,
+    "img": "room7.jpg",
+    "description": "Executive Suite with a private office and modern furnishings.",
+    "roomSize": "500 sq. ft.",
+    "roomImages": ["room7-1.jpg", "room7-2.jpg"],
+    "availability": true,
+    "priceRange": 1700
+  },
+  {
+    "roomId": 8,
+    "img": "room8.jpg",
+    "description": "Beachfront Villa with a direct access to the sandy shores.",
+    "roomSize": "600 sq. ft.",
+    "roomImages": ["room8-1.jpg", "room8-2.jpg"],
+    "availability": true,
+    "priceRange": 1900
+  },
+  {
+    "roomId": 9,
+    "img": "room9.jpg",
+    "description": "Pet-Friendly Room with a designated area for your furry friend.",
+    "roomSize": "250 sq. ft.",
+    "roomImages": ["room9-1.jpg", "room9-2.jpg"],
+    "availability": true,
+    "priceRange": 1100
+  },
+  {
+    "roomId": 10,
+    "img": "room10.jpg",
+    "description": "Penthouse Suite with a rooftop terrace and panoramic city views.",
+    "roomSize": "700 sq. ft.",
+    "roomImages": ["room10-1.jpg", "room10-2.jpg"],
+    "availability": true,
+    "priceRange": 2000
+  },
+  {
+    "roomId": 11,
+    "img": "room11.jpg",
+    "description": "Family Bungalow with multiple bedrooms and a private garden.",
+    "roomSize": "800 sq. ft.",
+    "roomImages": ["room11-1.jpg", "room11-2.jpg"],
+    "availability": true,
+    "priceRange": 1800
+  },
+  {
+    "roomId": 12,
+    "img": "room12.jpg",
+    "description": "Art Deco Style Room with unique vintage decor and ambiance.",
+    "roomSize": "350 sq. ft.",
+    "roomImages": ["room12-1.jpg", "room12-2.jpg"],
+    "availability": true,
+    "priceRange": 1500
+  },
+  {
+    "roomId": 13,
+    "img": "room13.jpg",
+    "description": "Luxury Chalet with a fireplace and stunning mountain views.",
+    "roomSize": "550 sq. ft.",
+    "roomImages": ["room13-1.jpg", "room13-2.jpg"],
+    "availability": true,
+    "priceRange": 1700
+  },
+  {
+    "roomId": 14,
+    "img": "room14.jpg",
+    "description": "Riverside Cottage with a private dock for fishing and relaxation.",
+    "roomSize": "400 sq. ft.",
+    "roomImages": ["room14-1.jpg", "room14-2.jpg"],
+    "availability": true,
+    "priceRange": 1600
+  }
+]

@@ -1,6 +1,6 @@
 import React from "react";
 import Testo from "./Testo";
-import { FaStar } from 'react-icons/fa';
+
 
 
 const Testomonial = () => {
