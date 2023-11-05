@@ -5,6 +5,7 @@ import Register from '../Pages/Register.jsx/Register'
 import Home from '../Pages/Home/Home'
 import Error from '../Components/Error/Error'
 import Rooms from '../Pages/Rooms/Rooms'
+import RoomDetails from '../Pages/RoomDetails/RoomDetails'
 
 const routes = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ const routes = createBrowserRouter([
             {
                 path:'/rooms',
                 element:<Rooms></Rooms>
+            },
+            {
+                path:'/roomDetails/:id',
+                element:<RoomDetails></RoomDetails>,
+                loader: ({params})=> fetch(`http://localhost:5000/api/v1/${params.id}`)
             }
         ]
     },

@@ -1,0 +1,27 @@
+[
+    { "roomId": "1", "seatId": "A1", "price": 1400, "available": true, "bookedDate": [] },
+    { "roomId": "1", "seatId": "A2", "price": 1500, "available": true, "bookedDate": [] },
+    { "roomId": "1", "seatId": "A3", "price": 1600, "available": true, "bookedDate": [] },
+    { "roomId": "1", "seatId": "A4", "price": 1700, "available": true, "bookedDate": [] },
+    { "roomId": "2", "seatId": "B1", "price": 1800, "available": true, "bookedDate": [] },
+    { "roomId": "2", "seatId": "B2", "price": 1900, "available": true, "bookedDate": [] },
+    { "roomId": "2", "seatId": "B3", "price": 2000, "available": true, "bookedDate": [] },
+    { "roomId": "2", "seatId": "B4", "price": 2100, "available": true, "bookedDate": [] },
+    { "roomId": "3", "seatId": "C1", "price": 1200, "available": true, "bookedDate": [] },
+    { "roomId": "3", "seatId": "C2", "price": 1300, "available": true, "bookedDate": [] },
+    { "roomId": "3", "seatId": "C3", "price": 1400, "available": true, "bookedDate": [] },
+    { "roomId": "3", "seatId": "C4", "price": 1500, "available": true, "bookedDate": [] },
+    { "roomId": "4", "seatId": "D1", "price": 1500, "available": true, "bookedDate": [] },
+    { "roomId": "4", "seatId": "D2", "price": 1600, "available": true, "bookedDate": [] },
+    { "roomId": "4", "seatId": "D3", "price": 1700, "available": true, "bookedDate": [] },
+    { "roomId": "4", "seatId": "D4", "price": 1800, "available": true, "bookedDate": [] },
+    { "roomId": "5", "seatId": "E1", "price": 1600, "available": true, "bookedDate": [] },
+    { "roomId": "5", "seatId": "E2", "price": 1700, "available": true, "bookedDate": [] },
+    { "roomId": "5", "seatId": "E3", "price": 1800, "available": true, "bookedDate": [] },
+    { "roomId": "5", "seatId": "E4", "price": 2000, "available": true, "bookedDate": [] },
+    { "roomId": "6", "seatId": "F1", "price": 1300, "available": true, "bookedDate": [] },
+    { "roomId": "6", "seatId": "F2", "price": 1400, "available": true, "bookedDate": [] },
+    { "roomId": "6", "seatId": "F3", "price": 1500, "available": true, "bookedDate": [] },
+    { "roomId": "6", "seatId": "F4", "price": 1600, "available": true, "bookedDate": [] }
+  ]
+  

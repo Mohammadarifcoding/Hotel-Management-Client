@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
 
 const RoomsPic = ({ data }) => {
-  const { img ,priceRange } = data;
+  const { _id ,  img ,priceRange } = data;
   return (
     <>
       <div className="min-w-[300px] full h-full relative">
@@ -17,9 +17,9 @@ const RoomsPic = ({ data }) => {
         )}
         <div className="overlay">
           <p className="   hover:bg-[#2c699e] p-3 bg-[#1E88E5] text-white text-center transition-opacity hover:opacity-100">
-            Price : {priceRange}
+            Price : {priceRange} - {priceRange + 300}
           </p>
-          <Link className="btn border-none absolute bottom-[38%] right-[38%] bg-[#1E88E5] hover:bg-[#2c699e] text-white transition-opacity hover:opacity-100">
+          <Link to={`/roomDetails/${_id}`} className="btn border-none absolute bottom-[38%] right-[38%] bg-[#1E88E5] hover:bg-[#2c699e] text-white transition-opacity hover:opacity-100">
             Details
 
            
