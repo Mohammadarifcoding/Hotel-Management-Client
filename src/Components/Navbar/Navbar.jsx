@@ -19,7 +19,7 @@ const Navbar = () => {
      .catch()
   }
     return (
-      <div className='backdrop-blur-md bg-white/30'>
+      <div className='backdrop-blur-md z-30 bg-white/30'>
  <div className="navbar container mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
@@ -44,22 +44,7 @@ const Navbar = () => {
           <img src="/user.png" />
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            {
-              user ? user.displayName : 'Unknown'
-            }
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li> { user ? <>
-         <a onClick={handleLogout}>Sign out</a>
-        </> : <>
-         <Link  to={'/register'}>Register</Link>
-         <Link  to={'/login'}>Login</Link>
-        </>}</li>
-      </ul>
+      
     </div>
   </div>
 </div>
