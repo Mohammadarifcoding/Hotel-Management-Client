@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import UseAxious from "../../Hooks/UseAxious";
 import Skeleton from "react-loading-skeleton";
 import Seats from "./Seats/Seats";
+import {useQuery} from "@tanstack/react-query"
 
 const RoomDetails = () => {
   const AxiousSecure = UseAxious();
@@ -18,11 +19,29 @@ const RoomDetails = () => {
   } = useLoaderData();
   const [seat, setSeats] = useState([]);
   const uri = `seats/${roomId}`;
+
   useEffect(() => {
     AxiousSecure.get(uri).then((res) => {
       setSeats(res.data);
     });
   }, [uri]);
+  const getSeats = async()=>{
+    const res = await AxiousSecure.get(uri)
+    return res
+  }
+
+  const { data:seatsinHere, isLoading , isError , error } = useQuery({
+    queryKey: ['seatsData'],
+    queryFn: getSeats
+  })
+
+  if(isLoading){
+    return <p>...loading</p>
+  }
+  if(isError){
+    return <p>error</p>
+  }
+
   const seatAvailable = seat.filter(item => item.available == true    )
   return (
     <>
