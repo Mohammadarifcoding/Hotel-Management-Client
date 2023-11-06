@@ -6,6 +6,7 @@ import Home from '../Pages/Home/Home'
 import Error from '../Components/Error/Error'
 import Rooms from '../Pages/Rooms/Rooms'
 import RoomDetails from '../Pages/RoomDetails/RoomDetails'
+import PrivateProvide from '../Components/Provider/PrivateProvide'
 
 const routes = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/roomDetails/:id',
-                element:<RoomDetails></RoomDetails>,
+                element:<PrivateProvide><RoomDetails></RoomDetails></PrivateProvide>,
                 loader: ({params})=> fetch(`http://localhost:5000/api/v1/${params.id}`)
             }
         ]

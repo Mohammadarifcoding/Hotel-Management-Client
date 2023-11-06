@@ -1,7 +1,8 @@
 import React from 'react';
 import SeatItem from './SeatItem';
 
-const Seats = ({data}) => {
+const Seats = ({data , loadedData}) => {
+   
 
     return (
          <div className="container mx-auto max-w-screen-lg">
@@ -18,7 +19,7 @@ const Seats = ({data}) => {
                 </thead>
                 <tbody>
                     {
-                        data.map((value,num)  => <SeatItem key={num} num={num} data={value} style={'bg-gray-100'}></SeatItem>)
+                        data.map((value,num)  => <SeatItem key={num} loadedData={loadedData} num={num} data={value} style={'bg-gray-100'}></SeatItem>)
                     }
                    
                 </tbody>

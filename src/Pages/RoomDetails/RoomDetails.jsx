@@ -6,6 +6,7 @@ import Seats from "./Seats/Seats";
 
 const RoomDetails = () => {
   const AxiousSecure = UseAxious();
+  const loadedData = useLoaderData()
   const {
     roomId,
     img,
@@ -22,7 +23,7 @@ const RoomDetails = () => {
       setSeats(res.data);
     });
   }, [uri]);
-
+  const seatAvailable = seat.filter(item => item.available == true    )
   return (
     <>
     
@@ -62,7 +63,7 @@ const RoomDetails = () => {
           Room <span className="text-[#1E88E5]">Size</span> : {roomSize}
         </p>
         <p className="mt-4 lg:text-start text-center font-medium">
-          {seat.length ? (
+          {seatAvailable.length ? (
             <p>
               <span className="px-[10px] py-[1px] rounded-full mr-3 bg-[#1E88E5] "></span>{" "}
               Available
@@ -76,7 +77,7 @@ const RoomDetails = () => {
         </p>
       </div>
     </div>
-    <Seats data={seat}></Seats>
+    <Seats loadedData={loadedData} data={seat}></Seats>
 </>
   );
 };
