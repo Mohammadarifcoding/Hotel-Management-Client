@@ -16,6 +16,7 @@ import { AuthContext } from "../../../Components/Provider/AuthProvider";
 
 const SeatItem = ({ data, style, num, loadedData }) => {
   const { user } = useContext(AuthContext)
+  const [bookingButton,setBookingButton] = useState(false)
   const AxiousSecure = UseAxious()
   const {
     roomId,
@@ -27,22 +28,31 @@ const SeatItem = ({ data, style, num, loadedData }) => {
     priceRange,
   } = loadedData;
   const [startDate, setStartDate] = useState(new Date());
+  console.log(startDate)
   const [open, setOpen] = React.useState(false);
 
    const dateValue = moment(startDate).format("MMM Do YYYY"); 
-   console.log(dateValue)   
+   console.log(dateValue) 
+
   const handleOpen = () => setOpen(!open);
   console.log(user.email)
 
   const send = {bookedDate:startDate,available:false}
-  const bookedData = {bookedData: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId }
+  const bookedData = {bookedDate: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId }
   const handleConfirm = ()=>{
     setOpen(!open);
+    console.log(startDate,'fdfadsfasdff')
+    console.log('dfsadfas')
    AxiousSecure.put(`/RoomSeat/${data._id}`,send)
   .then(res => {
+    console.log(startDate,'fdfadsfasdff')
+    console.log('dfsadfas')
     AxiousSecure.post('/booked',bookedData)
     .then(res => {
+      console.log(startDate,'fdfadsfasdff')
+    console.log('dfsadfas')
       console.log(res.data)
+      
       location.reload()
     })
   })
@@ -50,12 +60,22 @@ const SeatItem = ({ data, style, num, loadedData }) => {
   
     
   }
+
+
+  useEffect(()=>{
+    AxiousSecure.get(`/RoomSeat/${data._id}`)
+    .then(res => {
+      if(res.data.available){
+        setBookingButton(true)
+      }
+    })
+  },[open])
   return (
     <>
-      <tr className={num % 2 ? style : ""}>
+      <tr className={` ${num % 2? style :""}`}>
         <td className="px-4 py-2 text-center">Room {data.seatId}</td>
         <td className="px-4 py-2 text-center">
-          {data.available ? (
+          {bookingButton ? (
             <p>
               <span className="px-[10px] py-[1px] rounded-full mr-3 bg-[#1E88E5] "></span>{" "}
               Available
@@ -70,17 +90,33 @@ const SeatItem = ({ data, style, num, loadedData }) => {
         <td className="px-4 py-2 text-center">${data.price}</td>
         <td className="px-4 py-2 text-center">
           <DatePicker
+          showIcon
             selected={startDate}
             onChange={(date) => setStartDate(date)}
           />
         </td>
         <td className="px-4 py-2 text-center">
-          <button
+          {
+            bookingButton ? <>
+             <button
             onClick={handleOpen}
-            className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 text-center rounded"
+            className={`bg-blue-500 disabled btn hover:bg-blue-700 text-white px-4 py-2 text-center rounded `}
           >
             Book Now
           </button>
+            </>
+            : <>
+             <button
+            disabled
+            onClick={handleOpen}
+            className={`bg-blue-500 disabled btn hover:bg-blue-700 text-white px-4 py-2 text-center rounded `}
+          >
+            Booked
+          </button>
+
+            </>
+          }
+          
         </td>
       </tr>
 

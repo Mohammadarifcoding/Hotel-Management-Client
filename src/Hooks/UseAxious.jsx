@@ -9,7 +9,7 @@ const AxiousSecure = axios.create({
     withCredentials:true
 })
 const UseAxious = () => {
-    const { logOut } = useContext(AuthContext)
+    const { loading ,user, In, update , Google , OUT ,  creatUser } = useContext(AuthContext)
     const navigate = useNavigate();
     useEffect(() => {
         AxiousSecure.interceptors.response.use(res => {
@@ -18,7 +18,11 @@ const UseAxious = () => {
             console.log('error tracked in the interceptor', error.response)
             if (error.response.status === 401 || error.response.status === 403) {
                 console.log('logout the user')
-                navigate('/')
+                OUT()
+                .then(() => { 
+                    navigate('/login')
+                })
+                .catch(error => console.log(error))    
             }
         })
     }, [])

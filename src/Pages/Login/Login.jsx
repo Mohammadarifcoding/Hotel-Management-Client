@@ -1,23 +1,38 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from 'react-icons/fa';
 import { AuthContext } from "../../Components/Provider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2"
 
 const Login = () => {
   const {In} = useContext(AuthContext)
-  
+   const loc = useLocation()
+   const nav = useNavigate()
   const handleLogin = (e) => {
     e.preventDefault();
-
+    
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     In(email,password)
     .then(res => {
       console.log(res.user)
+      
+        Swal.fire({
+          title: "Good job!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+        {loc.state ? nav(loc.state) : nav('/') }
     })
     .catch(err => {
       console.log(err)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: "Your password and email doesn't match",
+      })
     })
 
 

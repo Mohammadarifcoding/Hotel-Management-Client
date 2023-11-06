@@ -17,14 +17,10 @@ const RoomDetails = () => {
     availability,
     priceRange,
   } = useLoaderData();
-  const [seat, setSeats] = useState([]);
+  // const [seat, setSeats] = useState([]);
   const uri = `seats/${roomId}`;
 
-  useEffect(() => {
-    AxiousSecure.get(uri).then((res) => {
-      setSeats(res.data);
-    });
-  }, [uri]);
+ 
   const getSeats = async()=>{
     const res = await AxiousSecure.get(uri)
     return res
@@ -36,13 +32,26 @@ const RoomDetails = () => {
   })
 
   if(isLoading){
-    return <p>...loading</p>
+    return <>
+    <div className='  container w-[100px] mx-auto min-h-[70vh] flex justify-center items-center'>
+   <div className="complete">
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__ball" />
+</div>
+
+    </div>
+    
+    </>
   }
   if(isError){
     return <p>error</p>
   }
 
-  const seatAvailable = seat.filter(item => item.available == true    )
+  const seatAvailable = seatsinHere.data.filter(item => item.available == true )
   return (
     <>
     
@@ -96,7 +105,7 @@ const RoomDetails = () => {
         </p>
       </div>
     </div>
-    <Seats loadedData={loadedData} data={seat}></Seats>
+    <Seats loadedData={loadedData} data={seatsinHere.data}></Seats>
 </>
   );
 };

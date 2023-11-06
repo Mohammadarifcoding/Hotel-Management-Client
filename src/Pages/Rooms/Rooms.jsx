@@ -1,28 +1,58 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import UseAxious from "../../Hooks/UseAxious";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import RoomsPic from "./RoomsPic";
+import { useQuery } from "@tanstack/react-query";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const Rooms = () => {
-  const [data, setData] = useState([]);
+ 
   const [value, setValue] = useState('')
+  const {loading ,user, In, update , Google , OUT ,  creatUser} = useContext(AuthContext)
 
   const axiousSecure = UseAxious();
-
+  const handleChange = (e)=>{
+    setValue(e.target.value)
+    console.log(e.target.value)
+ }
   const uri = `/rooms?order=${value}`;
 
-  useEffect(() => {
-    axiousSecure.get(uri).then((value) => setData(value.data));
-  }, [uri]);
 
-  const handleChange = (e)=>{
-     setValue(e.target.value)
-     console.log(e.target.value)
+  
+ 
+
+
+  const getRoom = async()=>{
+    const res = await axiousSecure.get(uri)
+    return res
   }
-  console.log(value)
 
-  console.log(data);
+  const { data:RoomData, isLoading , isError , error } = useQuery({
+    queryKey: ['Rooms',uri],
+    queryFn: getRoom
+  })
+
+  if(isLoading){
+    return <>
+    <div className='  container w-[100px] mx-auto min-h-[70vh] flex justify-center items-center'>
+   <div className="complete">
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__ball" />
+</div>
+
+    </div>
+    
+    </>
+  }
+  if(isError){
+    OUT()
+  }
+
   return (
     <div>
       <div className="bg-[url('/roomsbg.jpg')] bg-cover bg-center w-full min-h-[50vh]">
@@ -53,7 +83,7 @@ const Rooms = () => {
         </div>
       </div>
       <div className="grid xl:grid-cols-3 max-w-5xl my-10 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mx-auto">
-        {data.map((value) => (
+        {RoomData.data.map((value) => (
           <RoomsPic key={value._id} data={value}></RoomsPic>
         ))}
       </div>

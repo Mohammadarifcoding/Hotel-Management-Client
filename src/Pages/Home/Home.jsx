@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <div className="">
       <div
-        className={` w-full  bg-[url("https://i.ibb.co/0qQxFQ1/patrick-robert-doyle-AH8z-KXq-FITA-unsplash.jpg")] bg-cover bg-center bg-fixed min-h-screen `}
+        className={`w-full  bg-[url("https://i.ibb.co/0qQxFQ1/patrick-robert-doyle-AH8z-KXq-FITA-unsplash.jpg")] bg-cover bg-center bg-fixed min-h-screen `}
       >
-        <div className="min-h-screen w-full backdrop-brightness-[0.3] justify-between flex lg:flex-row flex-col  bg-cover bg-center bg-fixed  items-center">
-          <div className="container mx-auto p-4 flex lg:flex-row flex-col justify-center items-center">
+        <div className="min-h-screen  justify-between flex lg:flex-row flex-col  bg-cover bg-center z-10 backdrop-brightness-50 bg-fixed  items-center">
+          <div className=" mx-auto p-4 flex lg:flex-row flex-col justify-center items-center">
             <div className="mt-16 ">
               <h2 className="text-white lg:text-5xl max-w-lg leading-10 lg:text-start text-center text-3xl drop-shadow-xl font-bold  shadow-blue-500">
                 {" Your Ultimate Hotel Management Solution"}

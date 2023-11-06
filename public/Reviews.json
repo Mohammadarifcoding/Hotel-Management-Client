@@ -1,0 +1,86 @@
+[
+    {
+      "name": "Alice Johnson",
+      "image": "alice.jpg",
+      "rating": 5,
+      "review": "Excellent service! Loved our stay at the hotel.",
+      "roomID": "1"
+    },
+    {
+      "name": "Bob Smith",
+      "image": "bob.jpg",
+      "rating": 4,
+      "review": "Great experience with friendly staff.",
+      "roomID": "1"
+    },
+    {
+      "name": "Caroline Brown",
+      "image": "caroline.jpg",
+      "rating": 5,
+      "review": "Wonderful service and comfortable rooms.",
+      "roomID": "2"
+    },
+    {
+      "name": "David Wilson",
+      "image": "david.jpg",
+      "rating": 4,
+      "review": "Pleasant stay with great amenities.",
+      "roomID": "2"
+    },
+    {
+      "name": "Emily Davis",
+      "image": "emily.jpg",
+      "rating": 5,
+      "review": "Outstanding service and beautiful room.",
+      "roomID": "3"
+    },
+    {
+      "name": "Frank Martin",
+      "image": "frank.jpg",
+      "rating": 4,
+      "review": "Had a pleasant time at the hotel.",
+      "roomID": "3"
+    },
+    {
+      "name": "Grace Miller",
+      "image": "grace.jpg",
+      "rating": 5,
+      "review": "Exceptional service and comfortable stay.",
+      "roomID": "4"
+    },
+    {
+      "name": "Henry White",
+      "image": "henry.jpg",
+      "rating": 4,
+      "review": "Good service and cozy rooms.",
+      "roomID": "4"
+    },
+    {
+      "name": "Isabel Turner",
+      "image": "isabel.jpg",
+      "rating": 5,
+      "review": "Absolutely amazing! Loved every moment.",
+      "roomID": "5"
+    },
+    {
+      "name": "Jack Harris",
+      "image": "jack.jpg",
+      "rating": 4,
+      "review": "Had a great time at the hotel.",
+      "roomID": "5"
+    },
+    {
+      "name": "Katherine Lewis",
+      "image": "katherine.jpg",
+      "rating": 5,
+      "review": "A perfect stay with exceptional service.",
+      "roomID": "6"
+    },
+    {
+      "name": "Liam Clark",
+      "image": "liam.jpg",
+      "rating": 4,
+      "review": "Enjoyed the hotel's service and amenities.",
+      "roomID": "6"
+    }
+  ]
