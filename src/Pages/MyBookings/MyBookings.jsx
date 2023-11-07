@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import UseAxious from './../../Hooks/UseAxious';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../Components/Provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import BookItem from './BookItem';
+import Dot from '../../Components/Dot/Dot';
+import Swal from 'sweetalert2';
 
 const MyBookings = () => {
     const { user , OUT } = useContext(AuthContext)
+    
     const  AxiousSecure = UseAxious()
     const nav = useNavigate()
 
@@ -19,6 +22,8 @@ const MyBookings = () => {
         queryKey: ['booking',uri],
         queryFn: getBooking
       })
+
+      
       if(isLoading){
         return <>
         <div className='  container w-[100px] mx-auto min-h-[70vh] flex justify-center items-center'>
@@ -29,17 +34,18 @@ const MyBookings = () => {
       <div className="complete__bar" />
       <div className="complete__bar" />
       <div className="complete__ball" />
-    </div>
-    
+    </div>    
         </div>
         
         </>
       }
+    
       if(isError){
         OUT()
         nav('/login')
       }
-      console.log(Booking.data)
+ 
+     
 
 
     return (
@@ -58,12 +64,13 @@ const MyBookings = () => {
                 <tbody>
 
                     {
-                        Booking.data.map((value,i)=> <BookItem num={i} style={'bg-blue-100'} key={value._id} data={value}></BookItem>)
+                        Booking.data.map((value,i)=> <BookItem  num={i} style={'bg-blue-100'} key={value._id} data={value}></BookItem>)
                     }
                     
                 </tbody>
             </table>
         </div>
+        
     </div>
     );
 };

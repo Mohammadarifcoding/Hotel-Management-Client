@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { NavLink, Outlet } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Footer from './Components/Footer/Footer'
+import Dot from './Components/Dot/Dot'
 
 
 
@@ -22,7 +23,7 @@ function App() {
     <Outlet></Outlet>
     <Footer></Footer>
     
-  
+ <Dot></Dot>
 </div>
     </>
   )

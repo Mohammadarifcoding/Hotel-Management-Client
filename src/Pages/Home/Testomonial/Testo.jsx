@@ -1,31 +1,36 @@
-
-import { Rating } from "@material-tailwind/react";
+import { Button, Rating, Typography } from "@material-tailwind/react";
 import React from "react";
+import moment from "moment"
+const Testo = ({ data, index }) => {
+  const {name , rating , date, review} = data 
 
-
-
-const Testo = ({ data }) => {
-  const { img, name, review ,rating } = data;
+  const mainDate = moment(date).format('MMMM Do YYYY, h:mm:ss a')
   return (
-    <div className="overflow-hidden w-full m-4 flex justify-center   md:w-[33%]  shadow-xl bg-[#1E88E5]">
-      <div className="flex flex-col md:flex-row items-center justify-center  bg-white rounded-tl-full ">
-        <div className="  items-center justify-center flex py-2">
-          <div className="flex flex-col  items-center justify-center ">
-            <div className="flex items-center">
-              <div className="p-1 bg-white rounded-full">
-                <img src={img} alt className="rounded-full" />
-              </div>
-              <div>
-                <div className="font-bold text-stone-500 mx-4">{name}</div>
-                
-                <Rating value={rating} readonly></Rating>
-              </div>
-            </div>
-            <div className="text-stone-400  m-2 px-8"> {review}</div>
+    <div className="relative min-h-[500px] shadow-2xl lg:min-w-[500px] min-w-[30vw] lg:max-w-[700px] h-full max-w-[350px] w-full">
+        
+        <div className="absolute mx-auto inset-0 grid h-full w-full place-items-center bg-blue-700 text-white">
+          <div className="w-3/4 text-center md:w-2/4">
+            <Typography
+              variant="h1"
+     
+              className="mb-1 text-2xl text-center  md:text-3xl lg:text-4xl"
+            >
+              {name}
+             
+            </Typography>
+            <Rating className="mb-6 mx-auto"  value={rating} readonly></Rating>
+            <Typography
+              variant="lead"
+          
+              className="mb-12 text-center opacity-80"
+            >
+             {review}
+            </Typography>
+            
+            <p className="mt-5">{mainDate}</p>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

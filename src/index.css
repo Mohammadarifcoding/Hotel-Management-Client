@@ -8,6 +8,15 @@ body{
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+#floating {
+  position: absolute;
+  background: #FFD700;
+ 
+  padding: 0.5rem;
+  color: white;
+  box-sizing: border-box;
+}
+
 
  a.active {
  background-color: #1E88E5;

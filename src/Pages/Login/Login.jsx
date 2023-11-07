@@ -4,6 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2"
+import Dot from "../../Components/Dot/Dot";
 
 const Login = () => {
   const {In} = useContext(AuthContext)
@@ -42,7 +43,9 @@ const Login = () => {
   }
 
   return (
-    <form
+    <>
+    
+     <form
       onSubmit={handleLogin}
       className="form mx-auto max-w-md bg-white border-2 my-[5%] border-blue-500  p-8 rounded-lg"
     >
@@ -84,7 +87,10 @@ const Login = () => {
           Register
         </Link>
       </p>
-    </form>
+    </form> 
+   
+    </>
+  
   );
 };
 

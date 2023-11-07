@@ -2,6 +2,7 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import UseAxious from '../../../Hooks/UseAxious';
 import { useQuery } from '@tanstack/react-query';
+import moment from 'moment';
 
 const DisplayReviews = ({roomID}) => {
     const AxiousSecure = UseAxious()
@@ -56,6 +57,7 @@ const DisplayReviews = ({roomID}) => {
               ))}
             </div>
             <p className="text-lg font-semibold mb-2">{review.name}</p>
+            <p className=" text-gray-700  mb-4">{moment(review.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
             <p>{review.review}</p>
           </div>
         ))}

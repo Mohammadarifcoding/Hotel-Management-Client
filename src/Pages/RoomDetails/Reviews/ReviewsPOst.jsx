@@ -49,10 +49,10 @@ const ReviewsPOst = ({roomID}) => {
   if(isError){
     return <p>error</p>
   }
-
+   const date = new Date()
   console.log(personalBooking.data)
     const handlePostReview = ()=>{
-     const reviewData = { roomID : roomID.toString() , review: userReview ,rating : userRating, name:user.displayName   }
+     const reviewData = { roomID : roomID.toString() , review: userReview ,date ,rating : userRating, name:user.displayName   }
         AxiousSecure.post('/postReview',reviewData)
         .then(res => {
             console.log(res.data)
