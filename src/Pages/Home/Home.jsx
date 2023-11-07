@@ -2,7 +2,7 @@ import Contact from "./Contact/Contact";
 import NewsLetter from "./NewsLetter/NewsLetter";
 import Offer from "./Offer/Offer";
 import Parrlax from "./Parralax/Parrlax";
-import Feautures from "./Testomonial/Feautures";
+
 import Testomonial from "./Testomonial/Testomonial";
 
 const Home = () => {

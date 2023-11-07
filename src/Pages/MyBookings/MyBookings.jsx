@@ -40,11 +40,7 @@ const MyBookings = () => {
         </>
       }
     
-      if(isError){
-        OUT()
-        nav('/login')
-      }
- 
+      
      
 
 
@@ -56,7 +52,7 @@ const MyBookings = () => {
                     <tr className=" text-blue-600">
                         <th className="px-6 py-3">Seat Id</th>
                         <th className="px-6 py-3">Price</th>
-                        <th className="px-6 py-3">New Date</th>
+                        <th className="px-6 py-3"> Date</th>
                         <th className="px-6 py-3">Update</th>
                         <th className="px-6 py-3"></th>
                     </tr>

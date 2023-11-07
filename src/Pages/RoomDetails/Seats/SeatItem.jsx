@@ -37,9 +37,10 @@ const SeatItem = ({ data, style, num, loadedData }) => {
   const handleOpen = () => setOpen(!open);
   console.log(user.email)
 
-  const send = {bookedDate:startDate,bookedData:startDate,available:false}
-  const bookedData = {bookedDate: startDate,bookedData: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId : roomId.toString() }
+ 
   const handleConfirm = ()=>{
+    const send = {bookedDate:startDate,bookedData:startDate,available:false}
+    const bookedData = {bookedDate: startDate,bookedData: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId : roomId.toString() }
     setOpen(!open);
     console.log(startDate,'fdfadsfasdff')
     console.log('dfsadfas')

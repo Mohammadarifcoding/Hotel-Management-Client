@@ -19,9 +19,7 @@ const UseAxious = () => {
             if (error.response.status === 401 || error.response.status === 403) {
                 console.log('logout the user')
                 OUT()
-                .then(() => { 
-                    navigate('/login')
-                })
+                .then()
                 .catch(error => console.log(error))    
             }
         })

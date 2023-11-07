@@ -1,6 +1,20 @@
 import React from "react";
+import Swal from "sweetalert2"
 
 const Contact = () => {
+
+    const handleFeedback = e =>{
+      e.preventDefault()
+      
+      console.log('submiting')
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success"
+      });
+    }
+
+
   return (
     <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -40,13 +54,14 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <form onSubmit={handleFeedback} className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           <h2 className="text-[#1E88E5] text-lg mb-1 font-medium title-font">
             Feedback
           </h2>
           <p className="leading-relaxed mb-5 text-gray-600">
             We gives important to every feedback
-          </p>
+          </p>import { Swal } from 'sweetalert2';
+
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Name
@@ -83,10 +98,10 @@ const Contact = () => {
               defaultValue={""}
             />
           </div>
-          <button className="text-white bg-[#1E88E5] border-0 py-2 px-6 focus:outline-none hover:bg-[#3b90da] rounded text-lg">
+          <button type="submit" className="text-white bg-[#1E88E5] border-0 py-2 px-6 focus:outline-none hover:bg-[#3b90da] rounded text-lg">
             Send
           </button>
-        </div>
+        </form>
       </div>
     </section>
   );

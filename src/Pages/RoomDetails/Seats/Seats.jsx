@@ -19,7 +19,7 @@ const Seats = ({data , loadedData}) => {
                 </thead>
                 <tbody>
                     {
-                        data.map((value,num)  => <SeatItem key={num} loadedData={loadedData} num={num} data={value} style={'bg-gray-100'}></SeatItem>)
+                        data.map((value,num)  =>  <SeatItem key={num} loadedData={loadedData} num={num} data={value} style={'bg-gray-100'}></SeatItem>)
                     }
                    
                 </tbody>

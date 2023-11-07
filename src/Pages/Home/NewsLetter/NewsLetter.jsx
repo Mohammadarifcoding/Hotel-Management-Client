@@ -6,7 +6,7 @@ const NewsLetter = () => {
   return (
     <div className="bg-[url('/bg-newLetter.jpg')] bg-cover bg-center bg-fixed w-full min-h-[60vh] mt-10">
       <div className="backdrop-brightness-[0.3] justify-center flex flex-col min-h-[60vh] w-full h-full">
-        <h2 className=" lg:text-5xl text-4xl text-white text-center pt-10">
+        <h2 className=" lg:text-5xl text-4xl font-semibold text-white text-center pt-10">
           {" "}
           Subscribe to <span className="text-[#1E88E5]">Our</span> NewsLetter
         </h2>
@@ -29,7 +29,7 @@ const NewsLetter = () => {
             disabled={!email}
             className={`!absolute text-white ${email ? 'bg-[#1E88E5]' : 'bg-[#286aa3]'} right-1 top-1 rounded`}
           >
-            Invite
+            Subscribe
           </Button>
         </div>
       </div>

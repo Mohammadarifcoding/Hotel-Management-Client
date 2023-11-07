@@ -7,7 +7,7 @@ import Swal from "sweetalert2"
 import Dot from "../../Components/Dot/Dot";
 
 const Login = () => {
-  const {In} = useContext(AuthContext)
+  const {In , Google} = useContext(AuthContext)
    const loc = useLocation()
    const nav = useNavigate()
   const handleLogin = (e) => {
@@ -41,6 +41,32 @@ const Login = () => {
   const handleback = ()=>{
     window.history.back()
   }
+
+  const handleGoogle =()=>{
+    Google()
+    .then(res => {
+        console.log(res.user)
+        Swal.fire({
+          title: 'Your account have been created.',
+          width: 600,
+          padding: '3em',
+          color: '#716add',
+          background: '#fff url(/images/trees.png)',
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `
+        })
+
+       nav('/')
+        
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
   return (
     <>
@@ -80,6 +106,14 @@ const Login = () => {
       
       <button className="submit bg-blue-600 w-full mt-5 p-2 rounded-lg text-white text-lg transition duration-300 ease-in">
         Login
+      </button>
+      <button
+        onClick={handleGoogle}
+        className=" bg-black w-full text-white font-bold py-2 flex items-center justify-center gap-3 px-4 rounded-md mt-4"
+      >
+
+        <img className="w-[30px]" src="/continureGoogle.png" alt="" />
+        Continue With Google
       </button>
       <p className="signin text-gray-700  text-center mt-2 ">
         New user? 
