@@ -4,8 +4,11 @@ import Offer from "./Offer/Offer";
 import Parrlax from "./Parralax/Parrlax";
 import Testomonial from "./Testomonial/Testomonial";
 
+
 const Home = () => {
   return (
+    
+    <>
     <div className="">
       <div
         className={`w-full  bg-[url("https://i.ibb.co/0qQxFQ1/patrick-robert-doyle-AH8z-KXq-FITA-unsplash.jpg")] bg-cover bg-center bg-fixed min-h-screen `}
@@ -62,7 +65,10 @@ const Home = () => {
       <Offer></Offer>
       <NewsLetter></NewsLetter>
       <Contact></Contact>
+      
     </div>
+    
+    </>
   );
 };
 

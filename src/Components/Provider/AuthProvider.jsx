@@ -24,6 +24,7 @@ const AuthProvider = ({children}) => {
         const email = currentUser?.email || user?.email;
         const loggedUser = { email: email };
           setUser(currentUser)
+          console.log(currentUser)
           setLoading(false)
           console.log('Ovserving',currentUser)
           if (currentUser) {

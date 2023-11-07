@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ReactDatePicker from 'react-datepicker';
 import UseAxious from "../../Hooks/UseAxious";
 
+
 const BookItem = ({data , style , num}) => {
     const {bookedDate ,email , _id ,seatId , price ,roomId} = data
-    console.log(bookedDate)
+    
     const [startDate, setStartDate] = useState(new Date(bookedDate));
      const AxiousSecure = UseAxious()
      const date = {startDate}
@@ -17,10 +18,10 @@ const BookItem = ({data , style , num}) => {
 
 
     const handleUpdate = async()=>{
-          const result = await AxiousSecure.put(`/UpdateBooking/${_id}`, date)
+          const result = await AxiousSecure.put(`/UpdateBooking/${_id}`, {startDate})
           const res = result.data
-          console.log(res)  
           location.reload()
+        
     }
 
     const handleCancel = async ()=>{

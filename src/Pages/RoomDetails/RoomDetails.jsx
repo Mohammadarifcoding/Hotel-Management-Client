@@ -4,6 +4,8 @@ import UseAxious from "../../Hooks/UseAxious";
 import Skeleton from "react-loading-skeleton";
 import Seats from "./Seats/Seats";
 import {useQuery} from "@tanstack/react-query"
+import ReviewsPOst from "./Reviews/ReviewsPOst";
+import DisplayReviews from "./Reviews/DisplayReviews";
 
 const RoomDetails = () => {
   const AxiousSecure = UseAxious();
@@ -25,11 +27,16 @@ const RoomDetails = () => {
     const res = await AxiousSecure.get(uri)
     return res
   }
+  
 
   const { data:seatsinHere, isLoading , isError , error } = useQuery({
     queryKey: ['seatsData'],
     queryFn: getSeats
   })
+ 
+
+
+
 
   if(isLoading){
     return <>
@@ -106,6 +113,12 @@ const RoomDetails = () => {
       </div>
     </div>
     <Seats loadedData={loadedData} data={seatsinHere.data}></Seats>
+ <div className="max-w-5xl mx-auto">
+ <ReviewsPOst roomID={roomId}></ReviewsPOst>
+    <DisplayReviews roomID={roomId}></DisplayReviews>
+ </div>
+
+
 </>
   );
 };

@@ -3,84 +3,84 @@
       "name": "Alice Johnson",
       "image": "alice.jpg",
       "rating": 5,
-      "review": "Excellent service! Loved our stay at the hotel.",
+      "review": "Excellent service! We absolutely loved our stay at the hotel. The staff was incredibly friendly, and the amenities were top-notch.",
       "roomID": "1"
     },
     {
       "name": "Bob Smith",
       "image": "bob.jpg",
       "rating": 4,
-      "review": "Great experience with friendly staff.",
+      "review": "Our experience was great thanks to the friendly staff. The room was comfortable, and we enjoyed our stay.",
       "roomID": "1"
     },
     {
       "name": "Caroline Brown",
       "image": "caroline.jpg",
       "rating": 5,
-      "review": "Wonderful service and comfortable rooms.",
+      "review": "We had a wonderful experience with exceptional service and comfortable rooms. Our stay was truly memorable.",
       "roomID": "2"
     },
     {
       "name": "David Wilson",
       "image": "david.jpg",
       "rating": 4,
-      "review": "Pleasant stay with great amenities.",
+      "review": "Our stay was pleasant, and the amenities were great. We enjoyed our time at the hotel.",
       "roomID": "2"
     },
     {
       "name": "Emily Davis",
       "image": "emily.jpg",
       "rating": 5,
-      "review": "Outstanding service and beautiful room.",
+      "review": "The service was outstanding, and our room was beautiful. We had a fantastic stay.",
       "roomID": "3"
     },
     {
       "name": "Frank Martin",
       "image": "frank.jpg",
       "rating": 4,
-      "review": "Had a pleasant time at the hotel.",
+      "review": "We had a pleasant time at the hotel. The staff was friendly, and the atmosphere was cozy.",
       "roomID": "3"
     },
     {
       "name": "Grace Miller",
       "image": "grace.jpg",
       "rating": 5,
-      "review": "Exceptional service and comfortable stay.",
+      "review": "Exceptional service made our stay comfortable and enjoyable. We highly recommend this hotel.",
       "roomID": "4"
     },
     {
       "name": "Henry White",
       "image": "henry.jpg",
       "rating": 4,
-      "review": "Good service and cozy rooms.",
+      "review": "The service was good, and the rooms were cozy. We had a pleasant stay at the hotel.",
       "roomID": "4"
     },
     {
       "name": "Isabel Turner",
       "image": "isabel.jpg",
       "rating": 5,
-      "review": "Absolutely amazing! Loved every moment.",
+      "review": "Our stay was absolutely amazing! We loved every moment of it. The service was top-notch.",
       "roomID": "5"
     },
     {
       "name": "Jack Harris",
       "image": "jack.jpg",
       "rating": 4,
-      "review": "Had a great time at the hotel.",
+      "review": "We had a great time at the hotel. The staff was friendly, and the atmosphere was comfortable.",
       "roomID": "5"
     },
     {
       "name": "Katherine Lewis",
       "image": "katherine.jpg",
       "rating": 5,
-      "review": "A perfect stay with exceptional service.",
+      "review": "Our stay was perfect with exceptional service. We highly recommend this hotel to everyone.",
       "roomID": "6"
     },
     {
       "name": "Liam Clark",
       "image": "liam.jpg",
       "rating": 4,
-      "review": "Enjoyed the hotel's service and amenities.",
+      "review": "We enjoyed the hotel's service and amenities. Our stay was enjoyable and memorable.",
       "roomID": "6"
     }
   ]

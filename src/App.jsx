@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer'
 
 
 
+
 function App() {
  
 
@@ -20,6 +21,7 @@ function App() {
    
     <Outlet></Outlet>
     <Footer></Footer>
+    
   
 </div>
     </>

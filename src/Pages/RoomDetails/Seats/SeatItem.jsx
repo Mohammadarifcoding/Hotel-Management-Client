@@ -37,8 +37,8 @@ const SeatItem = ({ data, style, num, loadedData }) => {
   const handleOpen = () => setOpen(!open);
   console.log(user.email)
 
-  const send = {bookedDate:startDate,available:false}
-  const bookedData = {bookedDate: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId }
+  const send = {bookedDate:startDate,bookedData:startDate,available:false}
+  const bookedData = {bookedDate: startDate,bookedData: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId : roomId.toString() }
   const handleConfirm = ()=>{
     setOpen(!open);
     console.log(startDate,'fdfadsfasdff')
@@ -65,11 +65,15 @@ const SeatItem = ({ data, style, num, loadedData }) => {
   useEffect(()=>{
     AxiousSecure.get(`/RoomSeat/${data._id}`)
     .then(res => {
+      
       if(res.data.available){
         setBookingButton(true)
       }
     })
   },[open])
+
+  
+
   return (
     <>
       <tr className={` ${num % 2? style :""}`}>
