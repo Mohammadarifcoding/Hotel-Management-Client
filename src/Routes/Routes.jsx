@@ -8,6 +8,7 @@ import Rooms from '../Pages/Rooms/Rooms'
 import RoomDetails from '../Pages/RoomDetails/RoomDetails'
 import PrivateProvide from '../Components/Provider/PrivateProvide'
 import MyBookings from '../Pages/MyBookings/MyBookings'
+import Gallery from '../Pages/Gallery/Gallery'
 
 const routes = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const routes = createBrowserRouter([
             {
                 path:'/myBookings',
                 element:<PrivateProvide><MyBookings></MyBookings></PrivateProvide>
+            },
+            {
+                path:'/gallery',
+                element:<Gallery></Gallery>
             }
         ]
     },

@@ -10,9 +10,27 @@ import Dot from './Components/Dot/Dot'
 
 
 function App() {
- 
+   const [loading,setLoading] = useState(true)
 
+   setTimeout(() => {
+    setLoading(false)
+   }, 5000);
 
+   if(loading){
+    return <>
+    <div className='  container w-[100px] mx-auto min-h-[70vh] flex justify-center items-center'>
+   <div className="complete">
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__bar" />
+  <div className="complete__ball" />
+</div>    
+    </div>
+    
+    </>
+  }
 
   return (
     <>
