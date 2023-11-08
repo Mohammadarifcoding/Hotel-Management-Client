@@ -57,14 +57,15 @@ const BookItem = ({ data, style, num }) => {
           console.log("I am here guys");
           if (result.isConfirmed) {
             AxiousSecure.delete(`/deleteBookings/${_id}`).then((data) => {
-              console.log(data.data);
+              AxiousSecure.put(`/UpdateAvailability/${seatId}`).then((data) => {
+                Swal.fire("Deleted!", "", "success");
+                location.reload();
+              });
             });
             console.log("I have some to delete");
-            AxiousSecure.put(`/UpdateAvailability/${seatId}`).then((data) => {
-              location.reload();
-            });
+            
             console.log("I have some to delete");
-            Swal.fire("Deleted!", "", "success");
+          
           } else if (result.isDenied) {
             Swal.fire("Coludn't complete", "", "info");
           }

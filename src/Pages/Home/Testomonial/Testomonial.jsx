@@ -15,9 +15,10 @@ const Testomonial = () => {
     const res = AxiousSecure.get('/reviews')
     return res
   }
-
+ 
+  const random = Math.floor(Math.random * 9)
    const {data:AllReviews, isLoading , isError , error} = useQuery({
-    queryKey:['allReviews'],
+    queryKey:['allReviews',random],
     queryFn:getTheReiviews
    })
    if(isLoading){

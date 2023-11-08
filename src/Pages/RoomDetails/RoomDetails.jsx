@@ -35,7 +35,7 @@ const RoomDetails = () => {
   
 
   const { data:seatsinHere, isLoading , isError , error } = useQuery({
-    queryKey: ['seatsData'],
+    queryKey: [`seatsData${roomId}`,uri],
     queryFn: getSeats
   })
  

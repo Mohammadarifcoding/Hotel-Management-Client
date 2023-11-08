@@ -16,7 +16,7 @@ const DisplayReviews = ({roomID}) => {
     }
 
     const { data:Reviews, isLoading , isError , error } = useQuery({
-        queryKey: ['reviewsData'],
+        queryKey: [`reviewsData${roomID}`],
         queryFn: getReviews
       })
       if(isLoading){

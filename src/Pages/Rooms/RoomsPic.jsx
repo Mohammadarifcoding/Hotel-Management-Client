@@ -29,7 +29,7 @@ const RoomsPic = ({ data }) => {
 }
 
 const { data:Reviews, isLoading , isError , error } = useQuery({
-    queryKey: [`SingleReviewsData${roomId + 1}`],
+    queryKey: [`SingleReviewsData${roomId+1}`],
     queryFn: getReviews
   })
   if(isLoading){

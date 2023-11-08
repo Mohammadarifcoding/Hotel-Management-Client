@@ -26,7 +26,7 @@ const MyBookings = () => {
         return result
     }
     const { data:Booking, isLoading , isError , error } = useQuery({
-        queryKey: ['booking',uri],
+        queryKey: ['booking',user],
         queryFn: getBooking
       })
 
