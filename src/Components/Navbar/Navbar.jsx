@@ -11,6 +11,7 @@ const Navbar = () => {
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/'}>Home</NavLink> 
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white  rounded-md mr-2 '} to={'/rooms'}>Rooms</NavLink>
   <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white  rounded-md mr-2 '} to={'/gallery'}>Gallery</NavLink>
+  <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white  rounded-md mr-2 '} to={'/howToBook'}>How To Book</NavLink>
   
   {
     user ? <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/myBookings'}>My Bookings</NavLink>   : <NavLink className={'px-3 py-2 hover:bg-[#1E88E5] hover:text-white rounded-md mr-2 '} to={'/login'}>Login</NavLink>

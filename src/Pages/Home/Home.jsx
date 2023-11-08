@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Contact from "./Contact/Contact";
 import NewsLetter from "./NewsLetter/NewsLetter";
 import Offer from "./Offer/Offer";
@@ -6,6 +7,11 @@ import Parrlax from "./Parralax/Parrlax";
 import Testomonial from "./Testomonial/Testomonial";
 
 const Home = () => {
+
+  useEffect(() => {
+    // Update the document title for this page
+    document.title = 'Smart Hotel || Home';
+  }, []);
   return (
     <>
       <div className="">

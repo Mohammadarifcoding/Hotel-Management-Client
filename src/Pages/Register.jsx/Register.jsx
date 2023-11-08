@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import app from "../../Components/Firebase/Firebase.config";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,6 +7,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 const Register = () => {
+  useEffect(() => {
+    // Update the document title for this page
+    document.title = 'Smart Hotel || Register';
+  }, []);
   const auth = getAuth(app);
   const { creatUser, update , Google } = useContext(AuthContext);
   const naviagte = useNavigate();

@@ -9,6 +9,7 @@ import RoomDetails from '../Pages/RoomDetails/RoomDetails'
 import PrivateProvide from '../Components/Provider/PrivateProvide'
 import MyBookings from '../Pages/MyBookings/MyBookings'
 import Gallery from '../Pages/Gallery/Gallery'
+import HowToBook from '../Components/HowToBook/HowToBook'
 
 const routes = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const routes = createBrowserRouter([
             {
                 path:'/roomDetails/:id',
                 element:<PrivateProvide><RoomDetails></RoomDetails></PrivateProvide>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/${params.id}`)
+                loader: ({params})=> fetch(`https://hotel-managment-server.vercel.app/api/v1/${params.id}`)
             },
             {
                 path:'/myBookings',
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
             {
                 path:'/gallery',
                 element:<Gallery></Gallery>
+            },
+            {
+                path:'/howToBook',
+                element:<HowToBook></HowToBook>
             }
         ]
     },

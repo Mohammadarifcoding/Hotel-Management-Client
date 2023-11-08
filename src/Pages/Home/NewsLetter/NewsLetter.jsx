@@ -16,7 +16,9 @@ const NewsLetter = () => {
             type="email"
             label="Email Address"
             value={email}
-        
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom"
+            data-aos-duration="1000"
             onChange={onChange}
             className="pr-20 text-white  "
             containerProps={{

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from 'react-icons/fa';
 import { AuthContext } from "../../Components/Provider/AuthProvider";
@@ -7,6 +7,10 @@ import Swal from "sweetalert2"
 import Dot from "../../Components/Dot/Dot";
 
 const Login = () => {
+  useEffect(() => {
+    // Update the document title for this page
+    document.title = 'Smart Hotel || Login';
+  }, []);
   const {In , Google} = useContext(AuthContext)
    const loc = useLocation()
    const nav = useNavigate()

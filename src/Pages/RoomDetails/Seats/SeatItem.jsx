@@ -95,6 +95,7 @@ const SeatItem = ({ data, style, num, loadedData }) => {
         <td className="px-4 py-2 text-center">${data.price}</td>
         <td className="px-4 py-2 text-center">
           <DatePicker
+          minDate={new Date()}
           showIcon
             selected={startDate}
             onChange={(date) => setStartDate(date)}

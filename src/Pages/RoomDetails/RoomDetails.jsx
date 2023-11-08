@@ -22,6 +22,11 @@ const RoomDetails = () => {
   // const [seat, setSeats] = useState([]);
   const uri = `seats/${roomId}`;
 
+  useEffect(() => {
+    // Update the document title for this page
+    document.title = `Smart Hotel || Room ${roomId}`;
+  }, []);
+
  
   const getSeats = async()=>{
     const res = await AxiousSecure.get(uri)

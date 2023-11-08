@@ -122,6 +122,7 @@ const BookItem = ({data , style , num}) => {
 
            <div className=" flex justify-center mx-auto">
            <ReactDatePicker
+           minDate={new Date()}
       showIcon
       className="rounded-lg border-[1px] flex items-center border-blue-500"
       

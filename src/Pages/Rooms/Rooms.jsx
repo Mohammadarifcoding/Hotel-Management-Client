@@ -5,10 +5,17 @@ import "react-loading-skeleton/dist/skeleton.css";
 import RoomsPic from "./RoomsPic";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
+import { FaFilter } from "react-icons/fa";
 
 const Rooms = () => {
+
+  useEffect(() => {
+    // Update the document title for this page
+    document.title = 'Smart Hotel || Rooms';
+  }, []);
  
   const [value, setValue] = useState('')
+  const uri = `/rooms?order=${value}`;
   const {loading ,user, In, update , Google , OUT ,  creatUser} = useContext(AuthContext)
 
   const axiousSecure = UseAxious();
@@ -16,7 +23,7 @@ const Rooms = () => {
     setValue(e.target.value)
     console.log(e.target.value)
  }
-  const uri = `/rooms?order=${value}`;
+ 
 
 
   
@@ -60,7 +67,9 @@ const Rooms = () => {
           <img src="/roomsvg.png" alt="" />
         </div>
       </div>
-      <div className="relative w-48 mx-auto mt-5">
+      <div className="relative w-72 mx-auto mt-5 flex items-center gap-3">
+        <span className="flex items-center gap-3"><FaFilter></FaFilter> Filter</span>
+       
         <select onChange={handleChange} className="block w-full py-2 px-3 border border-gray-300 rounded-lg bg-white text-gray-700 appearance-none hover:border-gray-500 focus:outline-none focus:ring focus:border-blue-500">
           <option value="">Select</option>
           <option value="desc">Highest to Lowest Price</option>
@@ -82,11 +91,16 @@ const Rooms = () => {
           </svg>
         </div>
       </div>
-      <div className="grid xl:grid-cols-3 max-w-5xl my-10 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mx-auto">
+      <div className="grid  max-w-[1320px] my-10 gap-10 2xl:grid-cols-2 grid-cols-1 mx-auto">
         {RoomData.data.map((value) => (
           <RoomsPic key={value._id} data={value}></RoomsPic>
         ))}
       </div>
+      {/* <div className="grid xl:grid-cols-3 max-w-5xl my-10 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 mx-auto">
+        {RoomData.data.map((value) => (
+          <RoomsPic key={value._id} data={value}></RoomsPic>
+        ))}
+      </div> */}
     </div>
   );
 };
