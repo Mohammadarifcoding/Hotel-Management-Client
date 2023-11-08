@@ -82,7 +82,7 @@ const { data:Reviews, isLoading , isError , error } = useQuery({
           </Link>
         </div>
       </div> */}
-{/* 
+
       <div className="max-w-[700px] w-full  h-full relative p-5 bg-white border-gray-400 border-[4px] rounded-3xl shadow-2xl ouline-gray-600 mx-auto">
           <div className="relative w-full max-h-[300px] overflow-hidden rounded-2xl border-gray-200 border-2">
                  <img className="w-full" src={img} alt="" />
@@ -103,7 +103,7 @@ const { data:Reviews, isLoading , isError , error } = useQuery({
 
            
           </Link>
-      </div> */}
+      </div>
     </>
   );
 };
