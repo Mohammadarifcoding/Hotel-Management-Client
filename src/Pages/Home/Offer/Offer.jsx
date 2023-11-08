@@ -2,7 +2,7 @@ import React from 'react';
 
 const Offer = () => {
     return (
-        <div className=" flex lg:flex-row flex-col max-w-7xl mt-10  justify-center items-center gap-10" >
+        <div className=" flex lg:flex-row flex-col max-w-7xl mt-10  justify-center items-center gap-10 mx-auto" >
             <div data-aos="fade-zoom-in"
      data-aos-easing="ease-in-back"
      data-aos-delay="300"

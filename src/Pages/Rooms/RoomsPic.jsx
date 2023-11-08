@@ -29,7 +29,7 @@ const RoomsPic = ({ data }) => {
 }
 
 const { data:Reviews, isLoading , isError , error } = useQuery({
-    queryKey: ['SingleReviewsData'],
+    queryKey: [`SingleReviewsData${roomId + 1}`],
     queryFn: getReviews
   })
   if(isLoading){
@@ -55,11 +55,14 @@ const { data:Reviews, isLoading , isError , error } = useQuery({
   let averageRating = 0
    
   for(let value of Reviews.data){
+    console.log(value)
     averageRating = averageRating + value.rating
+    console.log(averageRating)
   }
-  averageRating = averageRating / Reviews.data.length
-  console.log(Reviews.data)
-  console.log(averageRating)
+  averageRating = Math.floor(averageRating / Reviews?.data?.length)
+  console.log('Review Data ',Reviews?.data)
+  console.log('Review rating average ',averageRating)
+  console.log('legnth',Reviews?.data.length)
 
   return (
     <>
@@ -95,7 +98,7 @@ const { data:Reviews, isLoading , isError , error } = useQuery({
           <p className="text-blue-500 lg:text-3xl sm:text-2xl text-xl text-center font-bold">We Offer you</p>
           <p className="lg:text-xl text-center my-3">Price <span className="text-blue-500">Range</span> :${priceRange} - ${priceRange+300}</p>
           <div className="mx-auto flex justify-center mt-4 mb-6 items-center">
-          <Rating className=" "  value={averageRating} readonly></Rating> <span className="text-lg"> ({Reviews.data.length})</span>
+          <Rating className=" "  value={averageRating} readonly></Rating> <span className="text-lg"> ({Reviews?.data?.length})</span>
           
           </div>
           <Link to={`/roomDetails/${_id}`} className="btn flex justify-center mx-auto max-w-[140px] border-none  bg-[#1E88E5] hover:bg-[#2c699e] text-white  ">
