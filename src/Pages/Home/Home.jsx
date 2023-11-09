@@ -7,7 +7,9 @@ import Parrlax from "./Parralax/Parrlax";
 import Testomonial from "./Testomonial/Testomonial";
 
 const Home = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     // Update the document title for this page
     document.title = 'Smart Hotel || Home';

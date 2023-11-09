@@ -23,7 +23,9 @@ const Rooms = () => {
     setValue(e.target.value)
     console.log(e.target.value)
  }
- 
+ useEffect(() => {
+  window.scrollTo(0, 0);
+}, [uri]);
 
 
   

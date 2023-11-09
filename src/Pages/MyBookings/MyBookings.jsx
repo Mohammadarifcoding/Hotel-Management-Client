@@ -10,7 +10,9 @@ import Dot from '../../Components/Dot/Dot';
 import Swal from 'sweetalert2';
 
 const MyBookings = () => {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     useEffect(() => {
         // Update the document title for this page
         document.title = 'Smart Hotel || My Bookings';

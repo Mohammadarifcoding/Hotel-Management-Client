@@ -10,6 +10,9 @@ import DisplayReviews from "./Reviews/DisplayReviews";
 const RoomDetails = () => {
   const AxiousSecure = UseAxious();
   const loadedData = useLoaderData()
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const {
     roomId,
     img,

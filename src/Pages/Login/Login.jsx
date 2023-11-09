@@ -64,7 +64,7 @@ const Login = () => {
           `
         })
 
-       nav('/')
+        {loc.state ? nav(loc.state) : nav('/') }
         
     })
     .catch(err => {
