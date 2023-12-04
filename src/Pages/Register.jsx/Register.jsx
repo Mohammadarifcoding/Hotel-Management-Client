@@ -6,6 +6,7 @@ import { useDropzone } from "react-dropzone";
 import { FaArrowLeft } from "react-icons/fa";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 const Register = () => {
   useEffect(() => {
     // Update the document title for this page
@@ -14,6 +15,7 @@ const Register = () => {
   const auth = getAuth(app);
   const { creatUser, update , Google } = useContext(AuthContext);
   const naviagte = useNavigate();
+  const [fullImage,setFullImage] = useState([])
   const [storedImage, setStoredImage] = useState(
     localStorage.getItem("userImage")
   );
@@ -21,12 +23,17 @@ const Register = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
-    onDrop: (acceptedFiles) => {
+    onDrop: async(acceptedFiles) => {
       const file = acceptedFiles[0];
       const reader = new FileReader();
+      setFullImage(acceptedFiles[0])
+      console.log(acceptedFiles)
+      console.log(acceptedFiles[0])
+      
 
       reader.onload = function (e) {
         // Store the image data in localStorage
+       
         localStorage.setItem("userImage", e.target.result);
         setPreviewImage(e.target.result);
         setStoredImage(e.target.result);
@@ -35,14 +42,23 @@ const Register = () => {
       reader.readAsDataURL(file);
     },
   });
-  const handleRegister = (e) => {
+  const handleRegister = async(e) => {
     e.preventDefault();
+    const image = fullImage
+    const result = await axios.post(`https://api.imgbb.com/1/upload?key=aeeb86c89c07e1b579479f8b39ef94a5`,{image},{
+      headers: {
+          'content-type': 'multipart/form-data'
+      }
+     })
+
 
     const form = e.target;
     const Name = form.firstName.value + " " + form.lastName.value;
     const email = form.email.value;
     const password = form.password.value;
-    let img = "https://i.ibb.co/5vjrsVQ/photo-2023-04-14-15-33-52.jpg";
+
+    let img = result.data;
+    console.log(img)
 
     if (password.length < 6) {
       Swal.fire({

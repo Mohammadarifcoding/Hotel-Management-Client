@@ -11,6 +11,11 @@ const Gallery = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
+
+      useEffect(() => {
+        // Update the document title for this page
+        document.title = 'Smart Hotel || Gallery';
+      }, []);
     const [images,setImages] = useState([])
     const onInit = () => {
         console.log('lightGallery has been initialized');

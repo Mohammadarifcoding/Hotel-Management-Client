@@ -21,7 +21,7 @@ const ReviewsPOst = ({roomID}) => {
 
    const AxiousSecure = UseAxious()
    const GetPersonalBookingData = ()=>{
-    const res = AxiousSecure.get(`/getBookingByEmailId?email=${user.email}&roomId=${roomID}`)
+    const res = AxiousSecure.get(`/getBookingByEmailId?email=${user?.email}&roomId=${roomID}`)
     return res
    }
 
@@ -46,9 +46,7 @@ const ReviewsPOst = ({roomID}) => {
     
     </>
   }
-  if(isError){
-    return <p>error</p>
-  }
+  
    const date = new Date()
   console.log(personalBooking.data)
     const handlePostReview = ()=>{

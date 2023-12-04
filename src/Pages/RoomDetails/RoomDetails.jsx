@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import UseAxious from "../../Hooks/UseAxious";
 import Skeleton from "react-loading-skeleton";
@@ -6,9 +6,12 @@ import Seats from "./Seats/Seats";
 import {useQuery} from "@tanstack/react-query"
 import ReviewsPOst from "./Reviews/ReviewsPOst";
 import DisplayReviews from "./Reviews/DisplayReviews";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const RoomDetails = () => {
+   const {user} = useContext(AuthContext)
   const AxiousSecure = UseAxious();
+
   const loadedData = useLoaderData()
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -122,7 +125,10 @@ const RoomDetails = () => {
     </div>
     <Seats loadedData={loadedData} data={seatsinHere.data}></Seats>
  <div className="max-w-5xl mx-auto">
- <ReviewsPOst roomID={roomId}></ReviewsPOst>
+  {
+    user ? <ReviewsPOst roomID={roomId}></ReviewsPOst> : <></>
+  }
+ 
     <DisplayReviews roomID={roomId}></DisplayReviews>
  </div>
 

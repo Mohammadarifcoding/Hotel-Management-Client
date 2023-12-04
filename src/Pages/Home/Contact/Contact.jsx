@@ -60,7 +60,7 @@ const Contact = () => {
           </h2>
           <p className="leading-relaxed mb-5 text-gray-600">
             We gives important to every feedback
-          </p>import { Swal } from 'sweetalert2';
+          </p>
 
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">

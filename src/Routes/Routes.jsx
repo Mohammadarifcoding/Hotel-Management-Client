@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/roomDetails/:id',
-                element:<PrivateProvide><RoomDetails></RoomDetails></PrivateProvide>,
+                element:<RoomDetails></RoomDetails>,
                 loader: ({params})=> fetch(`https://hotel-managment-server.vercel.app/api/v1/${params.id}`)
             },
             {

@@ -13,10 +13,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import Skeleton from "react-loading-skeleton";
 import UseAxious from "../../../Hooks/UseAxious";
 import { AuthContext } from "../../../Components/Provider/AuthProvider";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const SeatItem = ({ data, style, num, loadedData }) => {
   const { user } = useContext(AuthContext)
   const [bookingButton,setBookingButton] = useState(false)
+  const loc = useLocation()
+  const nav = useNavigate()
   const AxiousSecure = UseAxious()
   const {
     roomId,
@@ -34,12 +37,17 @@ const SeatItem = ({ data, style, num, loadedData }) => {
    const dateValue = moment(startDate).format("MMM Do YYYY"); 
    console.log(dateValue) 
 
-  const handleOpen = () => setOpen(!open);
-  console.log(user.email)
-
+  const handleOpen = () =>{
+    if(!user){
+      nav('/login', { state: loc.pathname });
+    }
+   return setOpen(!open);
+  } 
+  
+ 
  
   const handleConfirm = ()=>{
-    const send = {bookedDate:startDate,bookedData:startDate,available:false}
+  const send = {bookedDate:startDate,bookedData:startDate,available:false}
     const bookedData = {bookedDate: startDate,bookedData: startDate , email:user.email ,seatId : data.seatId , price : data.price , roomId : roomId.toString() }
     setOpen(!open);
     console.log(startDate,'fdfadsfasdff')
@@ -62,7 +70,7 @@ const SeatItem = ({ data, style, num, loadedData }) => {
     
   }
 
-
+   
   useEffect(()=>{
     AxiousSecure.get(`/RoomSeat/${data._id}`)
     .then(res => {
@@ -166,7 +174,7 @@ const SeatItem = ({ data, style, num, loadedData }) => {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="green" onClick={()=>{handleConfirm()}}>
+          <Button variant="gradient" color="green" onClick={handleConfirm}>
             Confirm
           </Button>
         </DialogFooter>
